@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Organic Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
+                <img src="{{ asset('images/logo/logo Organic food .png') }}" alt="Logo" width="45" height="45" class="rounded-circle me-2 shadow-sm" onerror="this.src='https://dummyimage.com/45x45/198754/fff&text=OS'">
+                <span class="text-success">OrganicStore</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('promo') }}">Promo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('testimoni') }}">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('faq') }}">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('cara-belanja') }}">Cara Belanja</a></li>
+
+                    <li class="nav-item ms-2">
+                        <a href="{{ url('/admin/login') }}" class="btn btn-outline-success btn-sm rounded-pill px-3">Masuk</a>
+                    </li>
+
+                    <li class="nav-item ms-2">
+                        <a href="{{ url('/profile') }}" class="nav-link text-success" title="Akun Saya">
+                            <i class="fas fa-user-circle fa-lg"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-2 me-2">
+                        <a href="{{ route('keranjang') }}" class="position-relative text-decoration-none text-success">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge-cart" style="font-size: 0.6rem;">0</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-2">
+                        <button id="darkModeBtn" style="background:none; border:none; cursor:pointer; padding: 5px;" title="Dark Mode">
+                            <i class="fas fa-moon text-secondary"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="alert-container" class="position-fixed top-0 end-0 p-3" style="z-index: 10000;"></div>
+
+    <main class="container py-5 flex-grow-1">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="fw-bold">Apa yang sering di tanya oleh pelanggan kami ?</h2>
+            <p class="text-muted">apakah ada pertanyaan mu di bawah ?</p>
+        </div>
+
+        <div class="row justify-content-center fade-in">
+            <div class="col-lg-8">
+                <div class="accordion shadow-sm" id="faqAccordion">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <strong>Apakah sayuran di sini benar-benar organik?</strong>
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ya, 100% organik. Kami bekerja sama langsung dengan petani bersertifikat organik tanpa menggunakan pestisida kimia berbahaya.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <strong>Bagaimana cara pengirimannya?</strong>
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Kami menggunakan kurir instan (Gojek/Grab) untuk menjaga kesegaran produk. Pesanan sebelum jam 14.00 akan dikirim di hari yang sama.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <strong>Apakah ada garansi jika buah busuk?</strong>
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Tentu! Jika Anda menerima produk yang kurang segar atau rusak, foto dan kirimkan ke WhatsApp kami dalam 1x24 jam untuk penggantian gratis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <strong>Bagaimana cara pembayarannya?</strong>
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Saat ini kami menerima pembayaran via Transfer Bank (BCA, Mandiri) dan E-Wallet (OVO, GoPay, Dana) melalui sistem QRIS.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-custom text-center py-4 bg-light mt-auto border-top">
+        <div class="container">
+            <p class="mb-0 fw-bold text-muted">&copy; 2026 Kelompok 9 Organic Store</p>
+            <small class="text-muted">Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk Mata Kuliah Pemrograman Web</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+</body>
+
+</html>

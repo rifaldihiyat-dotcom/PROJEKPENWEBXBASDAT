@@ -1,0 +1,8 @@
+body, .fi-body {
+    background: linear-gradient(to top, #c5f0d6 0%, #ffffff 100%) !important;
+    background-attachment: fixed !important;
+}
+
+.dark body, .dark .fi-body {
+    background: #121212 !important;
+}

@@ -1,0 +1,144 @@
+:root {
+    --primary-green: #198754;
+    --bg-body: linear-gradient(to top, #c5f0d6 0%, #ffffff 100%);
+    --bg-card: #ffffff;
+    --text-main: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-body);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-link {
+    color: var(--text-main) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-green) !important;
+}
+
+.bg-light,
+.bg-white,
+.card,
+.footer-custom,
+.product-card,
+.table-responsive,
+.accordion-button {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+.table th,
+.table td {
+    border-color: var(--border-color) !important;
+}
+
+.btn-outline-success {
+    color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+}
+
+.btn-outline-success:hover {
+    background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+.btn-success {
+    background-color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+}
+
+.footer-custom {
+    border-top: 1px solid var(--border-color) !important;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .bg-light,
+body.dark-mode .bg-white,
+body.dark-mode .card,
+body.dark-mode .footer-custom,
+body.dark-mode .product-card,
+body.dark-mode .table-responsive,
+body.dark-mode .accordion-button {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333333 !important;
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .text-muted,
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode small,
+body.dark-mode span {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .nav-link.active,
+body.dark-mode .nav-link:hover {
+    color: #2ecc71 !important;
+}
+
+body.dark-mode .btn-outline-success {
+    color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
+}
+
+body.dark-mode .btn-outline-success:hover {
+    background-color: rgba(46, 204, 113, 0.15) !important;
+}
+
+body.dark-mode .btn-success {
+    background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .badge.bg-danger {
+    background-color: #c82333 !important;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+    background-color: #272727 !important;
+}
+
+body.dark-mode .table thead th {
+    background-color: #212121 !important;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+    background-color: #2a2a2a !important;
+}
