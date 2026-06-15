@@ -16,9 +16,20 @@ class Buah extends Model
         'nama_buah',
         'harga_jual',
         'id_kategori',
-        'stok',
         'gambar',
     ];
+
+    // Relasi 1:1 ke tabel stok
+    public function stok()
+    {
+        return $this->hasOne(Stok::class, 'id_buah', 'id_buah');
+    }
+
+    // Accessor untuk memudahkan akses stok
+    public function getStokAttribute()
+    {
+        return $this->stok ? $this->stok->jumlah : 0;
+    }
 
     // Relasi ke tabel Kategori
     public function kategori(): BelongsTo
